@@ -3,6 +3,8 @@ package com.cround.cgpt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.Getter;
@@ -25,23 +27,40 @@ public class MainController {
 		return "HelpPage";
 	}
 	
-	@GetMapping("/")
+	@RequestMapping("/")
 	public String mainPage() {
 		// TODO Auto-generated method stub
 		return "MainPage";
 	}
 	
-	@GetMapping("/signup")
+	@GetMapping("/user/signup")
 	public String signupPage() {
 		// TODO Auto-generated method stub
 		return "SignupPage";
 	}
 	
-	@GetMapping("/login")
+	@GetMapping("/user/login")
 	public String loginPage() {
 		// TODO Auto-generated method stub
 		return "LoginPage";
 	}
 	
+	@GetMapping("/user/edit")
+	public String editInfoPage() {
+		// TODO Auto-generated method stub
+		return "EditInfomationPage";
+	}
+	
+	@GetMapping("/user/logout")
+	public String logout() {
+		// TODO Auto-generated method stub
+		return "redirect:/";
+	}
+	
+	@GetMapping("/admin")
+	public String admin() {
+		// TODO Auto-generated method stub
+		return "AdminPage";
+	}
 	
 }

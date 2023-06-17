@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계정 찾기 페이지</title>
+</head>
+<body>
+
+	<nav th:replace="~{navigation :: navi}"></nav>
+	<h2>계정 찾기 페이지</h2>
+	
+	<div>
+		<span>이메일 : </span>
+		<input type="email" name="email">
+	</div>
+
+	<div>
+		<span>아이디 : </span>
+		<input type="text" name="username">
+	</div>
+	
+	<div>
+		<button>아이디 찾기</button>
+		<button>임시 비밀번호 전송</button>
+	</div>
+	
+	<div>아이디 찾기를 하실 경우 이메일만 입력하신 후 버튼을 클릭하세요</div>
+	<div>비밀번호 찾기를 하실 경우 이메일과 아이디를 입력하신 후 버튼을 클릭하세요</div>
+	
+</body>
+</html>

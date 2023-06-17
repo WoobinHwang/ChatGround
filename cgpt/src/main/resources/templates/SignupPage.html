@@ -7,5 +7,39 @@
 <body>
 	<nav th:replace="~{navigation :: navi}"></nav>
 	<h2>회원가입 페이지</h2>
+	
+	<form action="/user/signup" method="post">
+	
+		<div>
+			<span>아이디 : </span>
+			<input type="text" name="username">
+		</div>
+		<div>
+			<span>비밀번호 : </span>
+			<input type="password" name="password">
+		</div>
+		<div>
+			<span>비밀번호 확인 : </span>
+			<input type="password" name="password2">
+		</div>
+		<div>
+		<span>닉네임 : </span>
+			<input type="text" name="nickname">
+		</div>
+		<div>
+			<span>이메일 : </span>
+			<input type="email" name="email">
+			<button>인증번호 전송</button>
+		</div>
+		
+		<div>
+			<span>인증번호 : </span>
+			<input name="certNum">
+			<button>인증번호 확인</button>
+		</div>
+		
+		<button type="submit" onsubmit="" >가입하기</button>
+	
+	</form>
 </body>
 </html>
