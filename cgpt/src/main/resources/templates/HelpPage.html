@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cround</title>
+</head>
+<body>
+
+	<nav th:replace="~{navigation :: navi}"></nav>
+
+	<h2>Cround is</h2>
+	<div>Chat + Ground</div>
+	
+	<h3>세팅 관련</h3>
+	
+	<h4>Java</h4>
+	<div>버전 17을 사용</div>
+	
+	<h4>DB</h4>
+	<div>h2 데이터베이스의 cgpt 라는 db명을 사용</div>
+	
+	<h3>Thymeleaf 관련</h3>
+	<h4>체감상 정의</h4>
+	<div>front와 back단의 데이터를 주고받기 용이한 라이브러리</div>
+	
+	<h4>세팅</h4>
+	<div>
+		<span>html태그 안에 xmlns:th="http://www.thymeleaf.org" 설정을 추가해주어야함</span>
+		<span>하지만 어째서인지 그냥 적용되는중</span>
+	</div>
+	
+	<h4>쓰는법</h4>
+	<div>
+		<span>태그에 th:text="${key}"를 입력하면</span>
+		<span th:text="${key}"></span>
+		<span>가 출력된다</span>
+	</div>
+	<div>
+		<span>그 외 여러가지 함수도 있음</span>
+		<span>if문, for문 th:block 태그 외 여러가지 내장 함수도 즐비함 </span>
+	</div>
+	
+	<h3>sts4 단축키</h3>
+	<div>멀티 커서 : ALT + Shift + A</div>
+	<div>파일명 검색 : CTRL + Shift + R</div>
+	<div>다음 창으로 이동 : CTRL + Tab</div>
+	<div>해당 창 닫기 : CTRL + W</div>
+	<div>Run Spring Boot App : ALT + Shift + X , B</div>
+	<div>Run Junit Test : ALT + Shift + X , T</div>
+	
+</body>
+</html>
