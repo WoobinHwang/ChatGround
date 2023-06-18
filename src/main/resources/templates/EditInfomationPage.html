@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정보 편집 페이지</title>
+</head>
+<body>
+	<nav th:replace="~{navigation :: navi}"></nav>
+	<h2>정보 편집 페이지</h2>
+	
+	<div>
+		<span>비밀번호 : </span>
+		<input type="password" name="password" >
+	</div>
+	
+	<div>
+		<span>비밀번호 확인 : </span>
+		<input type="password" name="password2" >
+	</div>
+	
+	<div>
+		<span>닉네임 : </span>
+		<input type="text" name="nickname" >
+	</div>
+	
+	<button>정보 편집하기</button>
+	<button>편집 취소</button>
+
+</body>
+</html>
