@@ -28,8 +28,10 @@ public class UserController {
 		System.out.println("password : " + user.getPassword());
 		System.out.println("nickname : " + user.getNickname());
 		System.out.println("email : " + user.getEmail());
-		userService.signup(user.getUsername(), user.getPassword()
-				, user.getNickname(), user.getEmail());
+		if(userService.signup(user.getUsername(), user.getPassword()
+				, user.getNickname(), user.getEmail()) == null) {
+			return "redirect:/user/signup";
+		} ;
 		
 		System.out.println("컨트롤러 signup 끝");
 		return "redirect:/user/login";
