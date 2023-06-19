@@ -21,7 +21,7 @@ public class UserList {
 	@Column(length = 45)
     private String username;
 
-	@Column(length = 45)
+	@Column(length = 100)
 	private String password;
 	
 	@Column(unique = true, length = 45)
