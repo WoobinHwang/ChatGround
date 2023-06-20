@@ -33,30 +33,6 @@ public class MainController {
 		return "MainPage";
 	}
 	
-	@GetMapping("/user/signup")
-	public String signupPage() {
-		// TODO Auto-generated method stub
-		return "SignupPage";
-	}
-	
-	@GetMapping("/user/login")
-	public String loginPage() {
-		// TODO Auto-generated method stub
-		return "LoginPage";
-	}
-	
-	@PostMapping ("/user/edit")
-	public String editInfoPage() {
-		// TODO Auto-generated method stub
-		return "EditInfomationPage";
-	}
-	
-	@GetMapping("/user/logout")
-	public String logout() {
-		// TODO Auto-generated method stub
-		return "redirect:/";
-	}
-	
 	@GetMapping("/admin")
 	public String admin() {
 		// TODO Auto-generated method stub

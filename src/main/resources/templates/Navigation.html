@@ -1,9 +1,10 @@
 <nav th:fragment="navi">
 	<a href="/">메인 페이지</a>
 	<a href="/user/signup">회원가입</a>
-	<a href="/user/login">로그인</a>
-	<a href="/user/logout">로그아웃</a>
+	<a href="/user/login" sec:authorize="isAnonymous()">로그인</a>
+	<a href="/user/logout" sec:authorize="isAuthenticated()">로그아웃</a>
 	<a href="/admin">관리자 페이지</a>
 	<a href="/user/edit">정보 편집</a>
+	<a href="/h2-console">DB</a>
 	<span>닉네임</span>
 </nav>

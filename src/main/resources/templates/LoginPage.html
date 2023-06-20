@@ -8,12 +8,12 @@
 	<nav th:replace="~{navigation :: navi}"></nav>
 	<h2>로그인 페이지</h2>
 	
-	<form action="/user/login" method="post">
+	<form th:action="@{/user/login}" method="post">
 		<div>
-			<input name="username">
+			<input type="text" name="username">
 		</div>
 		<div>
-			<input name="password">
+			<input type="password" name="password">
 		</div>
 		<button type="submit">로그인</button>
 		<button type="button" onclick="location.href='/user/signup'">회원가입</button>
