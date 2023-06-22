@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>로그인 페이지</title>
@@ -10,16 +10,17 @@
 	
 	<form th:action="@{/user/login}" method="post">
 		<div>
-			<input type="text" name="username">
+			<label>
+				<input type="text" name="username">
+			</label>
 		</div>
 		<div>
-			<input type="password" name="password">
+			<label>
+				<input type="password" name="password">
+			</label>
 		</div>
 		<button type="submit">로그인</button>
-		
 		<button type="button" onclick="location.href='/user/signup'">회원가입</button>
-		
 	</form>
-	
 </body>
 </html>
