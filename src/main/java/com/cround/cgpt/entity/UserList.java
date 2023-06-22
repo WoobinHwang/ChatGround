@@ -1,4 +1,4 @@
-package com.cround.cgpt.user;
+package com.cround.cgpt.entity;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;

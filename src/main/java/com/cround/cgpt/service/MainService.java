@@ -1,4 +1,4 @@
-package com.cround.cgpt;
+package com.cround.cgpt.service;
 
 import org.springframework.stereotype.Service;
 

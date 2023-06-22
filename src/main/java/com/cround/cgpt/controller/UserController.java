@@ -1,4 +1,4 @@
-package com.cround.cgpt.user;
+package com.cround.cgpt.controller;
 
 import java.util.Map;
 
@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cround.cgpt.entity.UserList;
+import com.cround.cgpt.service.UserServiceImpl;
+
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -17,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/user")
 public class UserController {
 
-	private final UserService userService; 
+	private final UserServiceImpl userService; 
 	
 	@GetMapping("/signup")
 	public String signupPage() {

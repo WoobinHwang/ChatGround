@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.cround.cgpt.user.UserList;
-import com.cround.cgpt.user.UserRepository;
+import com.cround.cgpt.dao.UserRepository;
+import com.cround.cgpt.entity.UserList;
 
 @SpringBootTest
 class CgptApplicationTests {

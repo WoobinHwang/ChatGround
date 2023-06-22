@@ -1,4 +1,4 @@
-package com.cround.cgpt.user;
+package com.cround.cgpt.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +12,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.cround.cgpt.UserRole;
+import com.cround.cgpt.dao.UserRepository;
+import com.cround.cgpt.entity.UserList;
+
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class UserService implements UserDetailsService{
+public class UserServiceImpl implements UserDetailsService, UserService{
 
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
@@ -66,8 +70,6 @@ public class UserService implements UserDetailsService{
 	public boolean duplicateCheck(String column, String data) {
 		// TODO Auto-generated method stub
 		System.out.println("중복검사중...");
-		
-		
 		
 		return false;
 	}

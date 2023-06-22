@@ -1,4 +1,4 @@
-package com.cround.cgpt.user;
+package com.cround.cgpt;
 
 import lombok.Getter;
 

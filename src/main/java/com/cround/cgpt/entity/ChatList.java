@@ -1,8 +1,6 @@
-package com.cround.cgpt.chat;
+package com.cround.cgpt.entity;
 
 import java.time.LocalDateTime;
-
-import com.cround.cgpt.user.UserList;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
