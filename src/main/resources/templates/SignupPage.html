@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>회원가입 페이지</title>
+<link rel="stylesheet" type="text/css" href="/css/Signup.css">
+<meta name="_csrf" th:content="${_csrf.token}">
+<meta name="_csrf_header" th:content="${_csrf.headerName}">
 </head>
 <body>
 	<nav th:replace="~{navigation :: navi}"></nav>
 	<h2>회원가입 페이지</h2>
 	
-	<form th:action="@{/user/signup}" method="post">
+	<form th:action="@{/user/signup}" method="post" id="user_info">
 	
-		<div>
-			<span>아이디 : </span>
-			<input type="text" name="username">
+		<div id="need_unduplicate">
+			<label for="username">아이디 : </label>
+			<input type="text" id="username" name="username" class="need_unduplicate">
 		</div>
 		<div>
-			<span>비밀번호 : </span>
-			<input type="password" name="password">
+			<label for="password">비밀번호 : </label>
+			<input type="password" id="password" name="password">
 		</div>
 		<div>
-			<span>비밀번호 확인 : </span>
-			<input type="password" name="password2">
+			<label for="password2">비밀번호 확인 : </label>
+			<input type="password" id="password2" name="password2">
 		</div>
-		<div>
-		<span>닉네임 : </span>
-			<input type="text" name="nickname">
+		<div id="need_unduplicate">
+		<label for="nickname">닉네임 : </label>
+			<input type="text" id="nickname" name="nickname" class="need_unduplicate">
 		</div>
-		<div>
-			<span>이메일 : </span>
-			<input type="email" name="email">
+		<div id="need_unduplicate">
+			<label for="email">이메일 : </label>
+			<input type="email" id="email" name="email" class="need_unduplicate">
 			<button>인증번호 전송</button>
 		</div>
 		
@@ -41,5 +44,10 @@
 		<button type="submit" >가입하기</button>
 	
 	</form>
+	
+	<!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="/js/Signup.js"></script>
+	
 </body>
 </html>

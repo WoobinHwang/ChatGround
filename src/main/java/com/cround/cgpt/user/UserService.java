@@ -63,5 +63,13 @@ public class UserService implements UserDetailsService{
 		return new User(user.getUsername(), user.getPassword(), authorities);
 	}
 	
+	public boolean duplicateCheck(String column, String data) {
+		// TODO Auto-generated method stub
+		System.out.println("중복검사중...");
+		
+		
+		
+		return false;
+	}
 	
 }
