@@ -1,15 +1,16 @@
 package com.cround.cgpt.controller;
 
-import java.util.Map;
+import java.security.Principal;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cround.cgpt.dao.UserRepository;
 import com.cround.cgpt.entity.UserList;
 import com.cround.cgpt.service.UserServiceImpl;
 
@@ -83,5 +84,22 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/find/account")
+	public String findAccountPage() {
+		System.out.println("계정 찾기 페이지입니다.");
+		return "FindAccountPage";
+	}
+	
+	@GetMapping("/username") 
+    @ResponseBody 
+    public UserList currentUserName(Principal Principal) { 
+		System.out.println("유저네임 찾는중");
+		System.out.println(Principal);
+		String userID = Principal.getName();
+		
+		UserList userInfo = userService.getUserInfo(userID);
+		
+		return userInfo;
+    } 
 	
 }

@@ -31,6 +31,7 @@ emailTag.addEventListener('change', function(e){
 })
  
 function duplicateCheck(column, inputValue){
+	
 	console.log(column);
 	console.log(inputValue);
 	

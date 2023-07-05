@@ -6,5 +6,8 @@
 	<a href="/admin">관리자 페이지</a>
 	<a href="/user/edit">정보 편집</a>
 	<a href="/h2-console">DB</a>
-	<span>닉네임</span>
+	<div sec:authorize="isAuthenticated()">
+		<span id="userNickname"/></span>
+		님 안녕하세요 ^^
+	</div>
 </nav>

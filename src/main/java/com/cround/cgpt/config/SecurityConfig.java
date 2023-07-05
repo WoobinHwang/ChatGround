@@ -1,4 +1,4 @@
-package com.cround.cgpt;
+package com.cround.cgpt.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,6 +31,7 @@ public class SecurityConfig {
         .and()
             .formLogin()
             .loginPage("/user/login")
+            // .defaultSuccessUrl("/user/login/success")
             .defaultSuccessUrl("/")
         .and()
             .logout()

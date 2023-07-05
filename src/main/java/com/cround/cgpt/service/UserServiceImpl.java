@@ -73,5 +73,16 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 		
 		return false;
 	}
+
+	public UserList getUserInfo(String username) {
+		// TODO Auto-generated method stub
+		UserList accountInfo = userRepository.findByusername(username);
+		UserList userInfo = new UserList();
+		userInfo.setUsername(accountInfo.getUsername());
+		userInfo.setNickname(accountInfo.getNickname());
+		userInfo.setEmail(accountInfo.getEmail());
+		
+		return userInfo;
+	}
 	
 }

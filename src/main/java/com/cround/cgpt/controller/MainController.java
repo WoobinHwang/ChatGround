@@ -3,13 +3,11 @@ package com.cround.cgpt.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cround.cgpt.entity.UserList;
 import com.cround.cgpt.service.MainService;
 
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 
@@ -30,8 +28,28 @@ public class MainController {
 	}
 	
 	@RequestMapping("/")
-	public String mainPage() {
+	public String mainPage(Model model , 
+				  UserList user
+			) {
 		// TODO Auto-generated method stub
+		
+//		if (user != null) {
+//			System.out.println(user);
+//			System.out.println(user.getNickname());
+//			System.out.println(user.getUsername());
+//			System.out.println(user.getPassword());
+//			
+//		} else {
+//			
+//		}
+		
+		
+		System.out.println("메인 페이지");
+		model.addAttribute(user);
+//		System.out.println(principal.getName());
+		System.out.println(model);
+		
+		
 		return "MainPage";
 	}
 	
