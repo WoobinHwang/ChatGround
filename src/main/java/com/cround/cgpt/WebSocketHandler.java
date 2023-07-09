@@ -9,7 +9,6 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-//@Log4j2
 @Component
 public class WebSocketHandler extends TextWebSocketHandler { 
 	
@@ -33,6 +32,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		// TODO Auto-generated method stub
 //		super.handleTextMessage(session, message);
+		
 		String msg = message.getPayload();
 		for (String key : sessionMap.keySet()) {
 			WebSocketSession wss = sessionMap.get(key);

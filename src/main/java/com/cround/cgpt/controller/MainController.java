@@ -32,18 +32,6 @@ public class MainController {
 				  UserList user
 			) {
 		// TODO Auto-generated method stub
-		
-//		if (user != null) {
-//			System.out.println(user);
-//			System.out.println(user.getNickname());
-//			System.out.println(user.getUsername());
-//			System.out.println(user.getPassword());
-//			
-//		} else {
-//			
-//		}
-		
-		
 		System.out.println("메인 페이지");
 		model.addAttribute(user);
 //		System.out.println(principal.getName());
@@ -58,4 +46,5 @@ public class MainController {
 		// TODO Auto-generated method stub
 		return "AdminPage";
 	}
+	
 }

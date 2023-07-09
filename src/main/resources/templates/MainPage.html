@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" 
 	xmlns:th="http://www.thymeleaf.org"> 
-	<!-- xmlns:sec="http://www.springframework.org/security/tags"> -->
+	
 <head>
 <meta charset="UTF-8">
 <meta name="_csrf" th:content="${_csrf.token}">
@@ -14,18 +14,20 @@
 	<nav th:replace="~{navigation :: navi}"></nav>
 	<h2>메인 페이지</h2>
 
-	<div class="chatLog">???: 이잉 !!!!단단묵직! bc</div>
-	<div class="chatLog">???: 이잉 !!!!단단묵직! a</div>
+	<!-- <div id="chattingLog"></div> -->
+	<textarea rows="8" cols="80" id="chattingLog" readonly="readonly"></textarea>
+	
 
 	<div sec:authorize="isAuthenticated()">
-		<input placeholder="채팅 입력 창" name="chatInput">
-		<button>입력</button>
+		<input placeholder="채팅 입력 창" id="chatInput" name="chatInput">
+		<button onclick="send()">입력</button>
 	</div>
 
 	<div sec:authorize="isAnonymous()">
 		<input placeholder="먼저 로그인을 해주세요">
-		<button type="button" onclick="location.href='/user/login'">로그인</button>
+		<button type="button" onclick="location.href='/user/login'">로그인하러 가기</button>
 	</div>
+	
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="/js/Main.js"></script>
