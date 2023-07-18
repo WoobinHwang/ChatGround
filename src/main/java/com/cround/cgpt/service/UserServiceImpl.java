@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 	public UserList signup(String username, String password
 			, String nickname, String email) {
 		// TODO Auto-generated method stub
+		username = username.toLowerCase();
 		
 		UserList user = userRepository.findByusername(username); 
 		if (user != null) {
@@ -50,6 +51,9 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
+		// 소문자로 변환
+		username = username.toLowerCase();
+		
 		UserList user = userRepository.findByusername(username);
 		
 		if(user==null) {
@@ -69,9 +73,44 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 	
 	public boolean duplicateCheck(String column, String data) {
 		// TODO Auto-generated method stub
-		System.out.println("중복검사중...");
+		System.out.println("중복검사함수중...");
+		// 넘어온 값을 소문자로 변환
+		data = data.toLowerCase();
+		UserList duplicatedData = null;
 		
-		return false;
+//		System.out.println("column : "+column);
+//		System.out.println("column : "+column.getClass().getName());
+		if (column.equals("username")) {
+			System.out.println("여기닷!");
+			duplicatedData = userRepository.findByusername(data);
+//			System.out.println("중간 점검 duplicatedData :" + duplicatedData);
+		} else if (column.equals("nickname")) {
+			System.out.println("저기닷!");
+			duplicatedData = userRepository.findBynickname(data);
+		} else if (column.equals("email")) {
+			System.out.println("저기닷!");
+			duplicatedData = userRepository.findByemail(data);
+		} else {
+			System.out.println("컬럼을 확인할 수 없음");
+		}
+		
+//		try {
+//			System.out.println("최종 점검 duplicatedData :" + duplicatedData);
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			System.out.println("duplicatedData는 null인것으로 추정");
+//		}
+		
+		
+		// 중복된다면 true
+		// 중복되는게 없다면 false
+		if (duplicatedData != null) {
+			System.out.println("중복되는게 있습니다.");
+			return true;
+		} else {
+			System.out.println("중복되는게 없습니다.");
+			return false;
+		}	
 	}
 
 	public UserList getUserInfo(String username) {

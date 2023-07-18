@@ -91,3 +91,9 @@ function send(){
 	ws.send(userNickname+" : "+msg);
 	$("#chatInput").val("");
 }
+
+function homzzang() {
+
+  alert("홈짱닷컴에 오셔서 코딩 배우세요.");
+
+}

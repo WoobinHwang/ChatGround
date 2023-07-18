@@ -49,20 +49,20 @@ public class UserController {
 	/** 중복된다면 true, 중복되지 않는다면 false를 반환 */
 	@PostMapping(value = "/duplicate/check")
 	@ResponseBody
-	public String duplicateCheck(String column, String data) {
+	public boolean duplicateCheck(String column, String data) {
 		
 		 System.out.println("column : " + column);
 		 System.out.println("data : " + data);
 		
-//		try {
-//			return userService.duplicateCheck(column, data);
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//			System.out.println("알수없는 이유로 체크가 불가능하여 중복된것으로 반환");
-//			return true;
-//		}
-		
-		return "true";
+		try {
+			return userService.duplicateCheck(column, data);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("알수없는 이유로 체크가 불가능하여 중복된것으로 반환");
+			return true;
+		}
+		 
+//		 return userService.duplicateCheck(column, data);
 	}
 	
 	
