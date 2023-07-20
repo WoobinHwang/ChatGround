@@ -81,14 +81,11 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 //		System.out.println("column : "+column);
 //		System.out.println("column : "+column.getClass().getName());
 		if (column.equals("username")) {
-			System.out.println("여기닷!");
 			duplicatedData = userRepository.findByusername(data);
 //			System.out.println("중간 점검 duplicatedData :" + duplicatedData);
 		} else if (column.equals("nickname")) {
-			System.out.println("저기닷!");
 			duplicatedData = userRepository.findBynickname(data);
 		} else if (column.equals("email")) {
-			System.out.println("저기닷!");
 			duplicatedData = userRepository.findByemail(data);
 		} else {
 			System.out.println("컬럼을 확인할 수 없음");

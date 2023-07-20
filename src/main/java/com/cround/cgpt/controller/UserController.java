@@ -95,9 +95,14 @@ public class UserController {
     public UserList currentUserName(Principal Principal) { 
 		System.out.println("유저네임 찾는중");
 		System.out.println(Principal);
-		String userID = Principal.getName();
+		UserList userInfo = new UserList();
 		
-		UserList userInfo = userService.getUserInfo(userID);
+		try {
+			String userID = Principal.getName();
+			userInfo = userService.getUserInfo(userID);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		return userInfo;
     } 

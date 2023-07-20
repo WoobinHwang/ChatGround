@@ -54,14 +54,14 @@ emailTag.addEventListener('input', function(e){
  */  
 function duplicateCheck(column, inputValue){
 	
-	var test = true;
-	console.log(column);
-	console.log(inputValue);
+	var returnResult = true;
+	// console.log(column);
+	// console.log(inputValue);
 	
-	if(test == true){
-		console.log("테스트중입니다")
-		return false;
-	}
+	// if(test == true){
+	// 	console.log("테스트중입니다")
+	// 	return false;
+	// }
 	
 	var checkDTO = {
 		"column" : column
@@ -69,9 +69,9 @@ function duplicateCheck(column, inputValue){
 	}
 	
 	$.ajax({
-    type : 'POST',           // 타입 (get, post, put 등등)
-    url : '/user/duplicate/check'           // 요청할 서버url
-    // async : true,            // 비동기화 여부 (default : true)
+    type : 'POST'           // 타입 (get, post, put 등등)
+    , url : '/user/duplicate/check'           // 요청할 서버url
+    , async : false            // 비동기화 여부 (default : true)
     // headers : {              // Http header
     //   "Content-Type" : "application/json",
     //   "X-HTTP-Method-Override" : "POST"
@@ -82,12 +82,13 @@ function duplicateCheck(column, inputValue){
         xhr.setRequestHeader(header, token);
     }
     , success : function(result) { // 결과 성공 콜백함수
-        console.log(result);
+        returnResult = result;
     },
     // error : function(request, status, error) { // 결과 에러 콜백함수
     //     console.log(error)
     // }
 	})
+	return returnResult;
 }
 
 /**
@@ -163,7 +164,7 @@ function validateCheck(column, inputValue){
 	} catch{
 		console.log("정규식에 맞는 단어를 찾을수없음.");
 	}
-	console.log("checkValue : " ,checkValue);
+	// console.log("checkValue : " ,checkValue);
 	
 	if (checkValue != inputValue || checkValue == ""){
 		errorTag.replaceWith(invalidComment);
@@ -171,14 +172,13 @@ function validateCheck(column, inputValue){
 		return;
 	}
 	
-	console.log("중복검사 시작")
-	if(duplicateCheck(column, inputValue) == true){
+	var duplicateResult = duplicateCheck(column, inputValue);
+	
+	if(duplicateResult == true){
 		// 중복될때
-		console.log("중복됩니다")
 		errorTag.replaceWith(duplicatedComment);
 	} else{
 		// 사용가능할때
-		console.log("사용가능합니다")
 		errorTag.replaceWith(successComment);
 	}
 }
