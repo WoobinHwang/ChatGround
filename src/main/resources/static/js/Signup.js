@@ -155,7 +155,6 @@ function validateCheck(column, inputValue){
 		return true;
 	}
 }
-
  
 /**
  * 중복하는 데이터가 있는지 확인하는 함수
@@ -259,6 +258,32 @@ function duplicatePassword(password, password2){
 		passwordCheck = true;
 		return true;
 	}
+}
+
+function passSignup(){
 	
-	
+	if(IdCheck == false){
+		alert("아이디를 확인해주세요");
+		return false;
+	} else if(passwordCheck == false){
+		alert("비밀번호를 확인해주세요");
+		return false;
+	} else if(nicknameCheck == false){
+		alert("닉네임을 확인해주세요");
+		return false;
+	} else if(emailCheck == false){
+		alert("이메일을 확인해주세요");
+		return false;
+	} else if(duplicateCheck("username", $('#username').val()) == true){
+		alert("이미 가입되어있는 아이디입니다.\r아이디를 바꾸시거나 새로고침을 부탁드립니다.");
+		return false;
+	} else if(duplicateCheck("nickname", $('#nickname').val()) == true){
+		alert("이미 가입되어있는 닉네임입니다.\r닉네임을 바꾸시거나 새로고침을 부탁드립니다.");
+		return false;
+	} else if(duplicateCheck("email", $('#email').val()) == true){
+		alert("이미 가입되어있는 이메일입니다.\r이메일을 바꾸시거나 새로고침을 부탁드립니다.");
+		return false;
+	} else{
+		return true;
+	}
 }
