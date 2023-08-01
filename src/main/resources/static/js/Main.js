@@ -24,7 +24,8 @@ $("#userNickname").ready(function(){
         nicknameTag.text(result.username)
         $('#userNicknameTag').val(result.username);
         
-        chatName();
+        // chatName();
+        wsOpen();
         
     },
     })
@@ -77,13 +78,14 @@ function wsEvt(){
 
 
 function chatName(){
-	userNickname = $('#userNicknameTag').val();
-	if(userNickname == null || userNickname.trim() == ""){
-		alert("사용자 이름을 입력해주세요.");
-		$("#userNickname").focus();
-	} else{
-		wsOpen();
-	}
+	// userNickname = $('#userNicknameTag').val();
+	// if(userNickname == null || userNickname.trim() == ""){
+	// 	alert("사용자 이름을 입력해주세요.");
+	// 	$("#userNickname").focus();
+	// } else{
+	// 	wsOpen();
+	// }
+	wsOpen();
 }
 
 function send(){
